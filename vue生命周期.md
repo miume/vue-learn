@@ -1,0 +1,19 @@
+## vue生命周期
+
+- vue组件都是vue实例，并且接受相同的选项对象
+- vue实例从创建到销毁的过程
+  - 开始创建
+  - 初始化数据
+  - 编译模板
+  - 挂载DOM
+  - 渲染，更新
+  - 渲染，卸载
+- beforeCreate：创建前
+- created：创建后
+- beforeMount：挂载前
+- mounted：挂载后，挂载节点，获取DOM节点
+- beforedUpdate：更新前
+- updated：更新后
+- beforeDestory：销毁前
+- Destroyed：销毁后
+- nextTick

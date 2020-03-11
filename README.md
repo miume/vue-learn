@@ -497,4 +497,66 @@ npm run dev    //启动项目
     </script>
     ```
 
+- Vue.js过渡和动画
+
+  - vue提供了内置的过渡封装组件，该组件用于包裹要实现过渡效果的组件
+
+  ```vue
+  <transition name="nameoftransition">
+    <div></div>
+  </transition>
+  ```
+
+  
+
+- Vue.js混入
+
+  - 混入mixins定义了一部分可复用的方法或者计算属性。
+
+  - 当组件使用混入对象时，所=所有混入对象的选项将被混入该组件本身的选项
+
+    ```vue
+    <script>
+      //定义一个混入对象
+      var myMixin = {
+        created: function () {
+          this.startmixin()
+        },
+        methods: {
+          startmixin: function () {
+            document.write("欢迎来到混入实例")
+          }
+        }
+      }
+      
+      var Component = Vue.extend({
+        mixins: [myMixin]
+      })
+    </script>
+    ```
+
+  - 选项合并
+
+    - 当组件和混入对象含有同名属性created时，会先执行混入对象
+    - 当组件和混入对象中methods选项中有相同的函数名，则Vue实例优先级会较高
+
+- Vue.js Ajax （axios）
+
+  - Axios是一个基于Promise的Http库，可以用在浏览器和node.js中
+
+    ```js
+    npm install axios
     
+    axios({
+      url: url,
+      method: 'put'/'get'/'post'/'delete'，
+      params,
+      data
+    }).then( response => {
+      
+    }).catch( error => {
+      
+    } )
+    ```
+
+  - axios.all([axios1, axios2])：执行多个并发请求
